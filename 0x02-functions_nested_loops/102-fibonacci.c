@@ -2,27 +2,29 @@
 
 /**
   *main - prints the first 50 Fibonacci numbers
-  *Return: Always 0 (success)
+  *Return: empty
   */
 int main(void)
 {
 	int i = 0;
-	long j = 1, k = 2;
+	long a = 1, b = 2;
 
 	while (i < 50)
 	{
 		if (i == 0)
-			printf("%ld", j);
+			printf("%ld", a);
 		else if (i == 1)
-			printf(",%ld", k);
+			printf(", %ld", b);
 		else
 		{
-			k += j;
-			j = k - j;
-			printf("%ld", k);
+			b += a;
+			a = b - a;
+			printf(", %ld", b);
 		}
+
 		++i;
 	}
+
 	printf("\n");
 	return (0);
 }
