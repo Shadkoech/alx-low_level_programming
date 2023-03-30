@@ -1,5 +1,10 @@
 #include <stdio.h>
 
+/**
+  *main - prints out magic numbers
+  *
+  *Return: Always 0
+  */
 int main(void)
 {
 	int n;
