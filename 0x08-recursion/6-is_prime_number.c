@@ -1,37 +1,30 @@
 #include "main.h"
 
-int prime_number(int n, int a)
-
 /**
-  *is_prime_number - Checks if an input number is a prime
-  *@n: the number to iterate
+  *PrimeNo - A generated function to help check if number is prime
+  *@n: The number to be checked
+  *@a: the index iterator for the number
   *
-  *Return: return 1 if it is a prime number; 0 if it not
+  *Return: 1 if number is prime, 0 otherwise
   */
-int is_prime_number(int n)
+int PrimeNo(int n, int a)
 {
-	if (n <= 1)
+	if (a == 1)
+		return (1);
+	if (n % a == 0)
 		return (0);
-	return (prime_number(n, n - 1));
+	return (PrimeNo(n, a - 1));
 }
 
 /**
-  *prime_number - finds prime number recursively
-  *@n: the number to iterate
-  *@a: index to recur
+  *is_prime_number - This function returns 1 in the case integer is prime
+  *@n: The number to be injected
   *
-  *Return: if number is prime return 1, if not 0
+  *Return: 1 if prime and 0 otherwise
   */
-int prime_number(int n, int a)
+int is_prime_number(int n)
 {
-	if (a == 1)
-	{
-		return (1);
-	}
-	else if (n % a == 0 && a > 0)
-	{
+	if (n < 3)
 		return (0);
-	}
-	else
-		return (prime_number(n, a - 1));
+	return (PrimeNo(n, n - 1));
 }
