@@ -31,6 +31,6 @@ int squareroot(int n, int a)
 		return (-1);
 
 	if (a * a == n)
-		return (1);
+		return (a);
 	return (squareroot(n, a + 1));
 }
