@@ -26,7 +26,7 @@ int _strlen_recursion(char *s)
 int palidromechecker(char *s, int x, int len)
 {
 	if (*(s + x) != *(s + len - 1))
-			return (0);
+		return (0);
 	if (x >= len)
 		return (1);
 	return (palidromechecker(s, x + 1, len - 1));
