@@ -34,12 +34,11 @@ int palidromechecker(char *s, int x, int len)
 
 
 /**
-  *is_palidrome - checks to see if the string is palidrome
+  *is_palindrome - checks to see if the string is palidrome
   *@s: a pointer to the target string
   *
   *Return: string length
   */
-
 int is_palindrome(char *s)
 {
 	if (*s == 0)
