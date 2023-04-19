@@ -31,7 +31,12 @@ int main(int argc, char *argv[])
 
 	for (x = 0; x < Nubytes; x++)
 	{
+		if (x == Nubytes - 1)
+		{
 		printf("%02hhx\n", p[x]);
+		break;
+		}
+		printf("%02hhx ", p[x]);
 	}
 	return (0);
 }
