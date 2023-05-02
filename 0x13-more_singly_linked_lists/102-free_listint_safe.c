@@ -12,7 +12,7 @@ size_t free_listint_safe(listint_t **h)
 	size_t nodecount;
 	int dff;
 
-	if (*h == NULL)
+	if (h == NULL || *h == NULL)
 		return (0);
 
 	while (*h != 0)
