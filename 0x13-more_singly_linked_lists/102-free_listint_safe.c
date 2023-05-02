@@ -9,7 +9,7 @@
 size_t free_listint_safe(listint_t **h)
 {
 	listint_t *temp;
-	size_t nodecount;
+	size_t nodecount = 0;
 	int dff;
 
 	if (h == NULL || *h == NULL)
