@@ -84,4 +84,13 @@ Requirements:
 File
 
 	- 100-Makefile
-
+Makefile with the following restrictions
+You are not allowed to have a list of all the .o files
+You have to use $(RM) for the cleaning up rules, but you are not allowed to set the RM variable
+You are not allowed to use the string $(CC) more than once in your Makefile
+You are only allowed to use the string $(RM) twice in your Makefile
+You are not allowed to use the string $(CFLAGS) (but the compiler should still use the flags you set in this variable)
+You are not allowed to have an $(OBJ) rule
+You are not allowed to use the %.o: %.c rule
+Your Makefile should work even if there is a file in the folder that has the same name as one of your rule
+Your Makefile should not compile if the header file m.h is missing

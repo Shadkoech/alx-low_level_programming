@@ -1,6 +1,4 @@
-# inclusion of m.h as a prerequisite in all is key since it is the header file for the project.
-# This means that and any changes to this header file will trigger a 
-# rebuild of the $(NAME) target to ensure it is consistent with the latest header information.
+# Makefile with restriction on $(OBJ), $(CFLAGS), $(RM)
 
 CC = gcc
 SRC = school.c main.c
@@ -26,4 +24,4 @@ oclean:
 fclean: clean oclean
 
 
-re: fcleain all
+re: fclean all
