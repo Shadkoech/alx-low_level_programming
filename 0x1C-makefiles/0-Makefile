@@ -1,7 +1,7 @@
 #makefile that does the automatic execution of school.c and main.c files to school executable
 
 
-all: executable
+all: compile
 
-executable: school.c main.c
+compile: school.c main.c
 	gcc school.c main.c -o school

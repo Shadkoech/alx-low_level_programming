@@ -26,14 +26,19 @@ Compiles the 2 .c files and uses CC and SRC variables
 
 
 
-## Task 1:
+## Task 2: make -f 2-Makefile
+
+File
+
+	- 2-Makefile
+More macro on Names and Object files
 
 
-## Task 1:
+## Task 4:
 
 
 
-## Task 1:
+## Task 5:
 
 
 ## Task 1:

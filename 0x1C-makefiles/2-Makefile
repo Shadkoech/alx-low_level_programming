@@ -1,0 +1,13 @@
+# Makefiles for 3 sources listed in SRC
+# Name of the executable school
+
+
+CC = gcc
+SRC = school.c main.c
+OBJ = $(SRC:.c=.o)
+NAME = school
+
+all: compile
+
+compile: $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
