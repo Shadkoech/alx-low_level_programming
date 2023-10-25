@@ -1,0 +1,31 @@
+# Makefile including more target all, clean, oclean, fclear, re
+# Macros used: CC, SRC, OBJ, NAME, RM
+# This time, non of the rules clean, oclean, fclean, re should fail
+
+
+CC = gcc
+SRC = school.c main.c
+OBJ = $(SRC:.c=.o)
+NAME = school
+RM = rm -f
+CFLAGS = -Wall -Werror -Wextra -pedantic
+
+
+.PHONY: all clean oclean fclean re
+
+all: $(OBJ)
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+
+
+clean: 
+	$(RM) *~ $(NAME)
+
+
+oclean:
+	$(RM) $(OBJ)
+
+
+fclean: clean oclean
+
+
+re: fclean all

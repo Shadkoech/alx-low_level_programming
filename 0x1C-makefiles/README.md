@@ -34,6 +34,7 @@ File
 More macro on Names and Object files
 
 
+
 ## Task 3: make -f 3-Makefile
 
 File
@@ -43,13 +44,16 @@ More rules that builds the executables and deletes the unwanted files
 
 
 
+## Task : A complete Makefile
+
+File
+
+	- 4-Makefile
+addition of the gcc flag  -Wall -Werror -Wextra -pedanticto ensure that rules do not fail
+
+
+
 ## Task 5:
-
-
-## Task 1:
-
-
-## Task 1:
 
 
 ## Task 1:
