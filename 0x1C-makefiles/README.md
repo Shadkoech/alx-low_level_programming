@@ -34,7 +34,12 @@ File
 More macro on Names and Object files
 
 
-## Task 4:
+## Task 3: make -f 3-Makefile
+
+File
+
+	- 3-Makefile
+More rules that builds the executables and deletes the unwanted files
 
 
 
