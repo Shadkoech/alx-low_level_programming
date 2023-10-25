@@ -1,0 +1,12 @@
+# Makefile excuting .c files (main.c, school.c)
+# Saves the excutable with name school
+
+
+CC = gcc
+SRC = school.c main.c
+
+
+all: compile
+
+compile: $(SRC)
+	$(CC) $(SRC) -o school
