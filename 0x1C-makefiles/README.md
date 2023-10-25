@@ -53,7 +53,35 @@ addition of the gcc flag  -Wall -Werror -Wextra -pedanticto ensure that rules do
 
 
 
-## Task 5:
+## Task 5: Interview Preparation Question
+
+File
+
+	- 5-island_perimeter.py
+A python module that returns  the perimeter of the island described in grid:
+
+grid is a list of list of integersi:
+
+* 0 represents a water zone
+* 1 represents a land zone
+* One cell is a square with side length 1
+* Grid cells are connected horizontally/vertically (not diagonally).
+* Grid is rectangular, width and height don’t exceed 100
+
+Grid is completely surrounded by water, and there is one island (or nothing).
+The island doesn’t have “lakes” (water inside that isn’t connected to the water around the island).
+
+Requirements:
+
+* First line contains #!/usr/bin/python3
+* You are not allowed to import any module
+* Module and function must be documented
 
 
-## Task 1:
+
+## Task 6: make -f 100-Makefile
+
+File
+
+	- 100-Makefile
+

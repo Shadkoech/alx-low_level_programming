@@ -1,0 +1,41 @@
+# Makefile including more target all, clean, oclean, fclear, re
+# Macros used: CC, SRC, OBJ, NAME, RM
+# This time, non of the rules clean, oclean, fclean, re should fail
+# Not allowed to use $(RM) for the cleaning up rules, but you are not allowed to set the RM variable
+# You are not allowed to use the string $(CC) more than once in your Makefile
+# You are only allowed to use the string $(RM) twice in your Makefile
+# You are not allowed to use the string $(CFLAGS) (but the compiler should still use the flags you set in this variable)
+# You are not allowed to have an $(OBJ) rule
+
+
+CC = gcc
+SRC = school.c main.c
+OBJ = $(SRC:.c=.o)
+NAME = school
+RM = rm -f
+CFLAGS = -Wall -Werror -Wextra -pedantic
+
+
+.PHONY: all clean oclean fclean re
+
+all: m.h $(OBJ)
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+
+
+clean: 
+	$(RM) *~ $(NAME)
+
+
+oclean:
+	$(RM) $(OBJ)
+
+
+fclean: clean oclean
+
+
+re: fcleain all
+
+
+
+# inclusion of m.h as a prerequisite in all is key since it is the header file for the project. 
+# This means that and any changes to this header file will trigger a rebuild of the $(NAME) target to ensure it is consistent with the latest header information.
