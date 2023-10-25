@@ -3,12 +3,16 @@
 # This time, non of the rules clean, oclean, fclean, re should fail
 # Not allowed to use $(RM) for the cleaning up rules
 
+# inclusion of m.h as a prerequisite in all is key since it is the header file for the project.
+# This means that and any changes to this header file will trigger a 
+# rebuild of the $(NAME) target to ensure it is consistent with the latest header information.
+
+
 
 CC = gcc
 SRC = school.c main.c
 OBJ = $(SRC:.c=.o)
 NAME = school
-RM = rm -f
 CFLAGS = -Wall -Werror -Wextra -pedantic
 
 
@@ -30,8 +34,3 @@ fclean: clean oclean
 
 
 re: fcleain all
-
-
-
-# inclusion of m.h as a prerequisite in all is key since it is the header file for the project. 
-# This means that and any changes to this header file will trigger a rebuild of the $(NAME) target to ensure it is consistent with the latest header information.
