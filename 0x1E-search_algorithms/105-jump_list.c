@@ -40,8 +40,11 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 	}
 	if (!prev || prev->n > value)
 	{
-		printf("Value found between indexes [%ld] and [%ld]\n",
-			prev->index, current->index);
+		if (current)
+		{
+			printf("Value found between indexes [%ld] and [%ld]\n",
+					prev->index, current->index);
+		}
 		return (NULL);
 	}
 	if (prev->n == value)
