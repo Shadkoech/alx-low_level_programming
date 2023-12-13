@@ -3,7 +3,7 @@
 
 /**
  *jump_list - function searching for a value in a sorted list using
- *	jump search algorith
+ *      jump search algorith
  *@list: pointer to the head of the linked list to search
  *@size: Number of nodes in the linked list
  *@value: The value to search in the LL
@@ -12,43 +12,32 @@
  */
 listint_t *jump_list(listint_t *list, size_t size, int value)
 {
-	size_t jump = sqrt(size);
-	listint_t *current = list;
-	listint_t *prev = NULL;
-	size_t i;
+	size_t step = 0;
+	size_t step_size = sqrt(size);
+	listint_t *curr, *jump;
 
 	if (list == NULL)
 		return (NULL);
 
-	while (current && current->n < value)
+	curr = jump = list;
+
+	for (; jump->index + 1 < size && jump->n < value;)
 	{
-		prev = current;
-		for (i = 0; current && i < jump; i++)
+		curr = jump;
+		for (step += step_size; jump->index < step; jump = jump->next)
 		{
-			current = current->next;
+			if (jump->index + 1 == size)
+				break;
 		}
-		if (current)
-		{
-			printf("Value checked at index [%ld] = [%d]\n", current->index, current->n);
-		}
+		printf("Value checked at index [%ld] = [%d]\n", jump->index, jump->n);
 	}
 
-	while (prev && prev->n < value)
-	{
-		printf("Value checked at index [%ld] = [%d]\n", prev->index, prev->n);
-		prev = prev->next;
-	}
-	if (!prev || prev->n > value)
-	{
-		if (current)
-		{
-			printf("Value found between indexes [%ld] and [%ld]\n",
-					prev->index, current->index);
-		}
-		return (NULL);
-	}
-	if (prev->n == value)
-		return (prev);
+	printf("Value found between indexes [%ld] and [%ld]\n",
+			curr->index, jump->index);
 
-	return (NULL);
+	for (; curr->index < jump->index && curr->n < value; curr = curr->next)
+		printf("Value checked at index [%ld] = [%d]\n", curr->index, curr->n);
+	printf("Value checked at index [%ld] = [%d]\n", curr->index, curr->n);
+
+	return (curr->n == value ? curr : NULL);
 }
